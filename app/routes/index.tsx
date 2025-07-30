@@ -2,10 +2,10 @@ import { useLoaderData } from '@remix-run/react';
 import { getCollections } from '~/providers/collections/collections';
 import { CollectionCard } from '~/components/collections/CollectionCard';
 import { BookOpenIcon } from '@heroicons/react/24/solid';
-import { LoaderArgs } from '@remix-run/server-runtime';
+import { LoaderFunctionArgs } from '@remix-run/router';
 import { useTranslation } from 'react-i18next';
 
-export async function loader({ request }: LoaderArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
   const collections = await getCollections(request, { take: 20 });
   return {
     collections,
@@ -38,36 +38,11 @@ export default function Index() {
         <div className="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
           <div className="relative bg-zinc-800 bg-opacity-0 rounded-lg p-0">
             <h1 className="text-6xl text-transparent bg-clip-text font-extrabold tracking-normal lg:text-6xl bg-gradient-to-r from-yellow-600 via-red-500 to-blue-600">
-              {t('vendure.title')}
+              MBOA Shop
             </h1>
           </div>
 
-          <p className="mt-4 text-2xl text-white">
-            {t('vendure.intro')}{' '}
-            <a
-              href="https://www.vendure.io"
-              className="text-blue-300 hover:text-blue-500"
-            >
-              Vendure
-            </a>{' '}
-            &{' '}
-            <a
-              href="~/routes/__cart/index"
-              className="text-red-300 hover:text-red-500"
-            >
-              Remix
-            </a>
-          </p>
-          <p className="mt-4 text-gray-300 space-x-1">
-            <BookOpenIcon className="w-5 h-5 inline" />
-            <span>{t('common.readMore')}</span>
-            <a
-              className="text-primary-200 hover:text-primary-400"
-              href="https://www.vendure.io/blog/2022/05/lightning-fast-headless-commerce-with-vendure-and-remix"
-            >
-              {t('vendure.link')}
-            </a>
-          </p>
+          <p className="mt-4 text-2xl text-white">Trading the Mboa Way</p>
         </div>
       </div>
 

@@ -28,18 +28,7 @@ export function Header({
     >
       <div className="bg-zinc-100 text-gray-600 shadow-inner text-center text-sm py-2 px-2 xl:px-0">
         <div className="max-w-6xl mx-2 md:mx-auto flex items-center justify-between">
-          <div>
-            <p className="hidden sm:block">
-              {t('vendure.exclusive')}{' '}
-              <a
-                href="https://github.com/vendure-ecommerce/storefront-remix-starter"
-                target="_blank"
-                className="underline"
-              >
-                {t('vendure.repoLinkLabel')}
-              </a>
-            </p>
-          </div>
+          {/* Announcement bar removed as requested */}
           <div>
             <Link
               to={isSignedIn ? '/account' : '/sign-in'}
@@ -57,9 +46,9 @@ export function Header({
         <h1 className="text-white w-10">
           <Link to="/">
             <img
-              src="/cube-logo-small.webp"
-              width={40}
-              height={31}
+              src="/mboa-logo.webp"
+              width={80}
+              height={62}
               alt={t('commmon.logoAlt')}
             />
           </Link>
