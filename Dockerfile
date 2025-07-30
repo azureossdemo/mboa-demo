@@ -29,4 +29,4 @@ EXPOSE 3000
 # Note: Add your .env file at build or runtime as needed
 
 # Start the app
-CMD ["yarn", "start"] 
+CMD ["yarn", "dev"] 
